@@ -39,15 +39,14 @@
                 <div class="carousel-item">
                     <div class="featured-property-half d-flex">
                         <div class="image"
-                            style="background-image: url('{{ asset('assets/images/img_2.jpg') }}'); height: 600px;"></div>
+                            style="background-image: url('{{ asset('assets/images/if20.jpg') }}'); height: 600px;"></div>
                         <div class="mt-5 text">
                             <h2>Selamat!</h2>
                             <p class="mb-5">
-                                Mahasiswa Informatika Angkatan 2020, Guntur Augustin Sinaga lolos
-                                dalam seleksi IISMA (Indonesian International Student Mobility
-                                Awards) pada Western University of Ontario di Canada
-                            </p>
-
+                                Mahasiswa Informatika Angkatan 2020, Roosen Manurung bersama dengan Natanael Siregar dan 
+                                Yoel Napitupulu lolos Code For The Nation Indonesia AI Tech Awaking oleh Biznet GioCloud dan
+                                Riset.ai. Dengan hasil 1st Runner Up Hackathon Code For The Nation dan Best Speaker
+                                pada 28 October 2022.
                             <p><a href="#" class="btn btn-primary px-4 py-3">Selengkapnya</a></p>
                         </div>
                     </div>
