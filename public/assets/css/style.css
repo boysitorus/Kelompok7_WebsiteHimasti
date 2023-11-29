@@ -1808,3 +1808,7 @@ figure figcaption {
   position: absolute;
   right: -130px;
 }
+
+.text-blue{
+  color: #2E436A !important;
+}
