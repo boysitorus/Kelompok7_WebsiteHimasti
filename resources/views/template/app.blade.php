@@ -52,7 +52,7 @@
                                         <li><a href="{{ route('kepengurusan') }}">2021</a></li>
                                     </ul>
                                 </li>
-                                <li class="{{ Request::is('kegiatan') ? 'active' : '' }}"><a href="{{ route('kegiatan') }}">kegiatan</a></li>
+                                <li class="{{ Request::is('kegiatan') ? 'active' : '' }}"><a href="{{ route('kegiatan') }}">Kegiatan</a></li>
 
                             </ul>
                         </nav>
