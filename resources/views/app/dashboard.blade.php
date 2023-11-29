@@ -80,7 +80,7 @@
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Oktober 28th, 2023</span>
                         <h2 class="h5 text-black mb-3">
-                            <a href="single.html">Acara Temu Ramah Angkatan 2023 dengan Angkatan 2021, 2020 dan
+                            <a class="text-blue" href="single.html">Acara Temu Ramah Angkatan 2023 dengan Angkatan 2021, 2020 dan
                                 2019</a>
                         </h2>
                     </div>
@@ -91,7 +91,7 @@
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">October 1st, 2022</span>
                         <h2 class="h5 text-black mb-3">
-                            <a href="single.html">Acara Temu Ramah Angkatan 2021 dengan Angkatan 2019, 2018 dan
+                            <a class="text-blue" href="single.html">Acara Temu Ramah Angkatan 2021 dengan Angkatan 2019, 2018 dan
                                 2017</a>
                         </h2>
                     </div>
@@ -102,7 +102,7 @@
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Feb 11th, 2023</span>
                         <h2 class="h5 text-black mb-3">
-                            <a href="single.html">Kegiatan Welcoming Party Untuk Angkatan 2022</a>
+                            <a class="text-blue" href="single.html">Kegiatan Welcoming Party Untuk Angkatan 2022</a>
                         </h2>
                     </div>
                 </div>
