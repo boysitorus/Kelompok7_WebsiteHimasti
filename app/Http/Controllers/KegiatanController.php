@@ -9,4 +9,8 @@ class KegiatanController extends Controller
     public function index(){
         return view("app.kegiatan");
     }
+
+    public function getDetail(){
+        return view("app.detailKegiatan");
+    }
 }

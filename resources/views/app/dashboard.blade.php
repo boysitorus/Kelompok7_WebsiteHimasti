@@ -31,7 +31,7 @@
                                 Awards) pada Western University of Ontario di Canada
                             </p>
 
-                            <p><a href="#" class="btn btn-primary px-4 py-3">Selengkapnya</a></p>
+                            <p><a href="{{ route('detailBerita') }}" class="btn btn-primary px-4 py-3">Selengkapnya</a></p>
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                                 Yoel Napitupulu lolos Code For The Nation Indonesia AI Tech Awaking oleh Biznet GioCloud dan
                                 Riset.ai. Dengan hasil 1st Runner Up Hackathon Code For The Nation dan Best Speaker
                                 pada 28 October 2022.
-                            <p><a href="#" class="btn btn-primary px-4 py-3">Selengkapnya</a></p>
+                            <p><a href="{{ route('detailBerita') }}" class="btn btn-primary px-4 py-3">Selengkapnya</a></p>
                         </div>
                     </div>
                 </div>
@@ -74,34 +74,34 @@
             </div>
             <div class="row">
                 <div class="col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
-                    <a href="single.html"><img src="{{ asset('assets/images/meet23.jpg') }}" alt="Image"
+                    <a href="{{ route('detailBerita') }}"><img src="{{ asset('assets/images/meet23.jpg') }}" alt="Image"
                             class="img-fluid" /></a>
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Oktober 28th, 2023</span>
                         <h2 class="h5 text-black mb-3">
-                            <a class="text-blue" href="single.html">Acara Temu Ramah Angkatan 2023 dengan Angkatan 2021, 2020 dan
+                            <a class="text-blue" href="{{ route('detailBerita') }}">Acara Temu Ramah Angkatan 2023 dengan Angkatan 2021, 2020 dan
                                 2019</a>
                         </h2>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
-                    <a href="single.html"><img src="{{ asset('assets/images/temu 19 18 dan 21.jpg') }}" alt="Image"
+                    <a href="{{ route('detailBerita') }}"><img src="{{ asset('assets/images/temu 19 18 dan 21.jpg') }}" alt="Image"
                             class="img-fluid" /></a>
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">October 1st, 2022</span>
                         <h2 class="h5 text-black mb-3">
-                            <a class="text-blue" href="single.html">Acara Temu Ramah Angkatan 2021 dengan Angkatan 2019, 2018 dan
+                            <a class="text-blue" href="{{ route('detailBerita') }}">Acara Temu Ramah Angkatan 2021 dengan Angkatan 2019, 2018 dan
                                 2017</a>
                         </h2>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
-                    <a href="single.html"><img src="{{ asset('assets/images/Welpar 2022.jpg') }}" alt="Image"
+                    <a href="{{ route('detailBerita') }}"><img src="{{ asset('assets/images/Welpar 2022.jpg') }}" alt="Image"
                             class="img-fluid" /></a>
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Feb 11th, 2023</span>
                         <h2 class="h5 text-black mb-3">
-                            <a class="text-blue" href="single.html">Kegiatan Welcoming Party Untuk Angkatan 2022</a>
+                            <a class="text-blue" href="{{ route('detailBerita') }}">Kegiatan Welcoming Party Untuk Angkatan 2022</a>
                         </h2>
                     </div>
                 </div>

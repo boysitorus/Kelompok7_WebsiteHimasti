@@ -16,8 +16,19 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/detailBerita', [DashboardController::class, 'getDetail'])->name('detailBerita');
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
-Route::get('/kepengurusan', [KepengurusanController::class, 'index'])->name('kepengurusan');
-Route::get('/kegiatan', [KegiatanController::class, 'index'])->name('kegiatan');
+
+Route::prefix('kegiatan')->group(function () {
+    Route::get('/', [KegiatanController::class, 'index'])->name('kegiatan');
+    Route::get('/detail', [KegiatanController::class, 'getDetail'])->name('detailKegiatan');
+});
+
+Route::prefix('kepengurusan')->group(function () {
+    Route::get('/', [KepengurusanController::class, 'index'])->name('kepengurusan');
+    Route::get('/detail', [KepengurusanController::class, 'getDetail'])->name('detailkepengurusan');
+});
+
+
+

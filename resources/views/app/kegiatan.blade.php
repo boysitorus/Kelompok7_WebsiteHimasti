@@ -16,84 +16,84 @@
             <div class="row">
 
             <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="300">
-                    <a href="single.html"><img src={{ asset('assets/images/temu22.jpg') }} alt="Image" class="img-fluid" /></a>
+                    <a href="{{ route('detailKegiatan') }}"><img src={{ asset('assets/images/temu22.jpg') }} alt="Image" class="img-fluid" /></a>
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Okt 28th, 2023</span>
                         <h2 class="h5 text-black mb-3">
-                            <a class="text-blue" href="single.html">Temu Ramah Angkatan 2021 dengan 2023</a>
+                            <a class="text-blue" href="{{ route('detailKegiatan') }}">Temu Ramah Angkatan 2021 dengan 2023</a>
                         </h2>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">
-                    <a href="single.html"><img src={{ asset('assets/images/temu22.JPG') }} alt="Image" class="img-fluid" /></a>
+                    <a href="{{ route('detailKegiatan') }}"><img src={{ asset('assets/images/temu22.JPG') }} alt="Image" class="img-fluid" /></a>
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Apr 10th, 2023</span>
                         <h2 class="h5 text-black mb-3">
-                            <a class="text-blue" href="single.html">KM CUP</a>
+                            <a class="text-blue" href="{{ route('detailKegiatan') }}">KM CUP</a>
                         </h2>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
-                    <a href="single.html"><img src={{ asset('assets/images/temu22.jpg')}} alt="Image" class="img-fluid" /></a>
+                    <a href="{{ route('detailKegiatan') }}"><img src={{ asset('assets/images/temu22.jpg')}} alt="Image" class="img-fluid" /></a>
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Okt 24th, 2023</span>
                         <h2 class="h5 text-black mb-3">
-                            <a class="text-blue" href="single.html">KPU HIMASTI 2023/2024</a>
+                            <a class="text-blue" href="{{ route('detailKegiatan') }}">KPU HIMASTI 2023/2024</a>
                         </h2>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">
-                    <a href="single.html"><img src={{ asset('assets/images/temu22.JPG') }} alt="Image" class="img-fluid" /></a>
+                    <a href="{{ route('detailKegiatan') }}"><img src={{ asset('assets/images/temu22.JPG') }} alt="Image" class="img-fluid" /></a>
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Apr 10th, 2023</span>
                         <h2 class="h5 text-black mb-3">
-                            <a class="text-blue" href="single.html">KM CUP</a>
+                            <a class="text-blue" href="{{ route('detailKegiatan') }}">KM CUP</a>
                         </h2>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
-                    <a href="single.html"><img src={{ asset('assets/images/temu22.jpg')}} alt="Image" class="img-fluid" /></a>
+                    <a href="{{ route('detailKegiatan') }}"><img src={{ asset('assets/images/temu22.jpg')}} alt="Image" class="img-fluid" /></a>
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Okt 24th, 2023</span>
                         <h2 class="h5 text-black mb-3">
-                            <a class="text-blue" href="single.html">KPU HIMASTI 2023/2024</a>
+                            <a class="text-blue" href="{{ route('detailKegiatan') }}">KPU HIMASTI 2023/2024</a>
                         </h2>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="300">
-                    <a href="single.html"><img src={{ asset('assets/images/temu22.jpg') }} class="img-fluid" /></a>
+                    <a href="{{ route('detailKegiatan') }}"><img src={{ asset('assets/images/temu22.jpg') }} class="img-fluid" /></a>
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Sept 16th, 2023</span>
                         <h2 class="h5 text-black mb-3">
-                            <a class="text-blue" href="single.html">Sharing Knowledge 2023</a>
+                            <a class="text-blue" href="{{ route('detailKegiatan') }}">Sharing Knowledge 2023</a>
                         </h2>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
-                    <a href="single.html"><img src={{ asset('assets/images/temu22.jpg')}} alt="Image" class="img-fluid" /></a>
+                    <a href="{{ route('detailKegiatan') }}"><img src={{ asset('assets/images/temu22.jpg')}} alt="Image" class="img-fluid" /></a>
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Okt 24th, 2023</span>
                         <h2 class="h5 text-black mb-3">
-                            <a class="text-blue" href="single.html">KPU HIMASTI 2023/2024</a>
+                            <a class="text-blue" href="{{ route('detailKegiatan') }}">KPU HIMASTI 2023/2024</a>
                         </h2>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="300">
-                    <a href="single.html"><img src={{ asset('assets/images/temu22.jpg') }} class="img-fluid" /></a>
+                    <a href="{{ route('detailKegiatan') }}"><img src={{ asset('assets/images/temu22.jpg') }} class="img-fluid" /></a>
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Sept 16th, 2023</span>
                         <h2 class="h5 text-black mb-3">
-                            <a class="text-blue" href="single.html">Sharing Knowledge 2023</a>
+                            <a class="text-blue" href="{{ route('detailKegiatan') }}">Sharing Knowledge 2023</a>
                         </h2>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
-                    <a href="single.html"><img src={{ asset('assets/images/temu22.jpg')}} alt="Image" class="img-fluid" /></a>
+                    <a href="{{ route('detailKegiatan') }}"><img src={{ asset('assets/images/temu22.jpg')}} alt="Image" class="img-fluid" /></a>
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Okt 24th, 2023</span>
                         <h2 class="h5 text-black mb-3">
-                            <a class="text-blue" href="single.html">KPU HIMASTI 2023/2024</a>
+                            <a class="text-blue" href="{{ route('detailKegiatan') }}">KPU HIMASTI 2023/2024</a>
                         </h2>
                     </div>
                 </div>

@@ -9,4 +9,8 @@ class KepengurusanController extends Controller
     public function index(){
         return view("app.kepengurusan");
     }
+
+    public function getDetail(){
+        return view("app.detailKepengurusan");
+    }
 }

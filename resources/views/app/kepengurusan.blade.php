@@ -154,6 +154,10 @@
 
                 
             </div>
+            <div class="d-flex justify-content-center">
+                <a href="{{ route('detailkepengurusan') }}" class="btn btn-primary px-4 py-3">Selengkapnya</a>
+            </div>
+            
         </div>
     </div>
 
@@ -235,6 +239,9 @@
                         </div>
                     </a>
                 </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href="{{ route('detailkepengurusan') }}" class="btn btn-primary px-4 py-3">Selengkapnya</a>
             </div>
         </div>
     </div>
@@ -320,6 +327,9 @@
 
                 
             </div>
+            <div class="d-flex justify-content-center">
+                <a href="{{ route('detailkepengurusan') }}" class="btn btn-primary px-4 py-3">Selengkapnya</a>
+            </div>
         </div>
     </div>
 
@@ -401,6 +411,9 @@
                         </div>
                     </a>
                 </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href="{{ route('detailkepengurusan') }}" class="btn btn-primary px-4 py-3">Selengkapnya</a>
             </div>
         </div>
     </div>
@@ -484,6 +497,9 @@
                     </a>
                 </div>
             </div>
+            <div class="d-flex justify-content-center">
+                <a href="{{ route('detailkepengurusan') }}" class="btn btn-primary px-4 py-3">Selengkapnya</a>
+            </div>
         </div>
     </div>
 
@@ -565,6 +581,9 @@
                         </div>
                     </a>
                 </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href="{{ route('detailkepengurusan') }}" class="btn btn-primary px-4 py-3">Selengkapnya</a>
             </div>
         </div>
     </div>

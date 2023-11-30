@@ -1817,3 +1817,19 @@ figure figcaption {
   color: #2E436A !important;
   
 }
+
+.featured-property-half-detail {
+  position: relative;
+  background: #fff;
+  margin-top: -100px;
+  -webkit-box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.1);
+}
+
+.featured-property-half-detail .image {
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 600px; /* Adjust the height as needed */
+}
