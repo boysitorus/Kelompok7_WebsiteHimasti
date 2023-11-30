@@ -107,7 +107,9 @@
                         </div>
                     </a>
                 </div>
+            </div>
 
+            <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-3 mb-5" data-aos="fade-up" data-aos-delay="100">
                     <a href="apartment-detail.html" class="unit-9">
                         <div class="image" style="background-image: url('assets/images/rafael.png')"></div>
@@ -195,7 +197,9 @@
                         </div>
                     </a>
                 </div>
+            </div>
 
+            <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-3 mb-5" data-aos="fade-up" data-aos-delay="100">
                     <a href="apartment-detail.html" class="unit-9">
                         <div class="image" style="background-image: url('assets/images/rafael.png')"></div>
@@ -280,53 +284,54 @@
                         </div>
                     </a>
                 </div>
-
-                <div class="col-md-6 col-lg-3 mb-5" data-aos="fade-up" data-aos-delay="100">
-                    <a href="apartment-detail.html" class="unit-9">
-                        <div class="image" style="background-image: url('assets/images/rafael.png')"></div>
-                        <div class="unit-9-content">
-                            <h2>Anggota</h2>
-                            <span>Lorem ipsum</span>
-                            <!-- <span>with Wendy Matos</span> -->
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-6 col-lg-3 mb-5" data-aos="fade-up" data-aos-delay="100">
-                    <a href="apartment-detail.html" class="unit-9">
-                        <div class="image" style="background-image: url('assets/images/rafael.png')"></div>
-                        <div class="unit-9-content">
-                            <h2>Anggota</h2>
-                            <span>Lorem ipsum</span>
-                            <!-- <span>with Wendy Matos</span> -->
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-6 col-lg-3 mb-5" data-aos="fade-up" data-aos-delay="100">
-                    <a href="apartment-detail.html" class="unit-9">
-                        <div class="image" style="background-image: url('assets/images/rafael.png')"></div>
-                        <div class="unit-9-content">
-                            <h2>Anggota</h2>
-                            <span>Lorem ipsum</span>
-                            <!-- <span>with Wendy Matos</span> -->
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-6 col-lg-3 mb-5" data-aos="fade-up" data-aos-delay="100">
-                    <a href="apartment-detail.html" class="unit-9">
-                        <div class="image" style="background-image: url('assets/images/rafael.png')"></div>
-                        <div class="unit-9-content">
-                            <h2>Anggota</h2>
-                            <span>Lorem ipsum</span>
-                            <!-- <span>with Wendy Matos</span> -->
-                        </div>
-                    </a>
-                </div>
-
-                
             </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-3 mb-5" data-aos="fade-up" data-aos-delay="100">
+                    <a href="apartment-detail.html" class="unit-9">
+                        <div class="image" style="background-image: url('assets/images/rafael.png')"></div>
+                        <div class="unit-9-content">
+                            <h2>Anggota</h2>
+                            <span>Lorem ipsum</span>
+                            <!-- <span>with Wendy Matos</span> -->
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-5" data-aos="fade-up" data-aos-delay="100">
+                    <a href="apartment-detail.html" class="unit-9">
+                        <div class="image" style="background-image: url('assets/images/rafael.png')"></div>
+                        <div class="unit-9-content">
+                            <h2>Anggota</h2>
+                            <span>Lorem ipsum</span>
+                            <!-- <span>with Wendy Matos</span> -->
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-5" data-aos="fade-up" data-aos-delay="100">
+                    <a href="apartment-detail.html" class="unit-9">
+                        <div class="image" style="background-image: url('assets/images/rafael.png')"></div>
+                        <div class="unit-9-content">
+                            <h2>Anggota</h2>
+                            <span>Lorem ipsum</span>
+                            <!-- <span>with Wendy Matos</span> -->
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-5" data-aos="fade-up" data-aos-delay="100">
+                    <a href="apartment-detail.html" class="unit-9">
+                        <div class="image" style="background-image: url('assets/images/rafael.png')"></div>
+                        <div class="unit-9-content">
+                            <h2>Anggota</h2>
+                            <span>Lorem ipsum</span>
+                            <!-- <span>with Wendy Matos</span> -->
+                        </div>
+                    </a>
+                </div>
+            </div>
+
             <div class="d-flex justify-content-center">
                 <a href="{{ route('detailkepengurusan') }}" class="btn btn-primary px-4 py-3">Selengkapnya</a>
             </div>
@@ -367,7 +372,9 @@
                         </div>
                     </a>
                 </div>
+            </div>
 
+            <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-3 mb-5" data-aos="fade-up" data-aos-delay="100">
                     <a href="apartment-detail.html" class="unit-9">
                         <div class="image" style="background-image: url('assets/images/rafael.png')"></div>
@@ -452,7 +459,9 @@
                         </div>
                     </a>
                 </div>
+            </div>
 
+            <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-3 mb-5" data-aos="fade-up" data-aos-delay="100">
                     <a href="apartment-detail.html" class="unit-9">
                         <div class="image" style="background-image: url('assets/images/rafael.png')"></div>
@@ -537,7 +546,9 @@
                         </div>
                     </a>
                 </div>
+            </div>
 
+            <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-3 mb-5" data-aos="fade-up" data-aos-delay="100">
                     <a href="apartment-detail.html" class="unit-9">
                         <div class="image" style="background-image: url('assets/images/rafael.png')"></div>
