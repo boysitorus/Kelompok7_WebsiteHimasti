@@ -233,7 +233,7 @@ a {
     padding-bottom: 15px; }
     .site-footer .footer-heading:before {
       content: "";
-      background: #e3c4a8;
+      background: #2E436A;
       width: 40px;
       height: 2px;
       position: absolute;
@@ -1586,7 +1586,7 @@ a {
     left: 0;
     bottom: 0;
     height: 2px;
-    background: #e3c4a8; }
+    background: #2E436A; }
 
 .site-section-heading.w-border.text-center h2:after {
   left: 50%;
@@ -1810,5 +1810,10 @@ figure figcaption {
 }
 
 .text-blue{
+  color: #426097 !important;
+}
+
+.text-blue:hover{
   color: #2E436A !important;
+  
 }

@@ -20,7 +20,7 @@
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Okt 28th, 2023</span>
                         <h2 class="h5 text-black mb-3">
-                            <a href="single.html">Temu Ramah Angkatan 2021 dengan 2023</a>
+                            <a class="text-blue" href="single.html">Temu Ramah Angkatan 2021 dengan 2023</a>
                         </h2>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Apr 10th, 2023</span>
                         <h2 class="h5 text-black mb-3">
-                            <a href="single.html">KM CUP</a>
+                            <a class="text-blue" href="single.html">KM CUP</a>
                         </h2>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Okt 24th, 2023</span>
                         <h2 class="h5 text-black mb-3">
-                            <a href="single.html">KPU HIMASTI 2023/2024</a>
+                            <a class="text-blue" href="single.html">KPU HIMASTI 2023/2024</a>
                         </h2>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Apr 10th, 2023</span>
                         <h2 class="h5 text-black mb-3">
-                            <a href="single.html">KM CUP</a>
+                            <a class="text-blue" href="single.html">KM CUP</a>
                         </h2>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Okt 24th, 2023</span>
                         <h2 class="h5 text-black mb-3">
-                            <a href="single.html">KPU HIMASTI 2023/2024</a>
+                            <a class="text-blue" href="single.html">KPU HIMASTI 2023/2024</a>
                         </h2>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Sept 16th, 2023</span>
                         <h2 class="h5 text-black mb-3">
-                            <a href="single.html">Sharing Knowledge 2023</a>
+                            <a class="text-blue" href="single.html">Sharing Knowledge 2023</a>
                         </h2>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Okt 24th, 2023</span>
                         <h2 class="h5 text-black mb-3">
-                            <a href="single.html">KPU HIMASTI 2023/2024</a>
+                            <a class="text-blue" href="single.html">KPU HIMASTI 2023/2024</a>
                         </h2>
                     </div>
                 </div>
@@ -84,7 +84,7 @@
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Sept 16th, 2023</span>
                         <h2 class="h5 text-black mb-3">
-                            <a href="single.html">Sharing Knowledge 2023</a>
+                            <a class="text-blue" href="single.html">Sharing Knowledge 2023</a>
                         </h2>
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Okt 24th, 2023</span>
                         <h2 class="h5 text-black mb-3">
-                            <a href="single.html">KPU HIMASTI 2023/2024</a>
+                            <a class="text-blue" href="single.html">KPU HIMASTI 2023/2024</a>
                         </h2>
                     </div>
                 </div>
