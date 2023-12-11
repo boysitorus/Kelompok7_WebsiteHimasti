@@ -14,6 +14,37 @@
         </div>
     </div>
 
+    {{-- filter --}}
+
+    <form method="" class="container mt-5">
+        <h2>Kepengurusan 2021</h2>
+
+        <div class="form-group">
+            <label for="tahun-select">Pilih Tahun Kepengurusan :</label>
+            <select class="form-control" id="tahun-select" name="tahun-select">
+                <option value="option1">Tahun Kepengurusan 2019 / 2020</option>
+                <option value="option2">Tahun Kepengususan 2020 / 2021</option>
+                <option value="option3">Tahun Kepengurusan 2021 / 2022</option>
+            </select>
+        </div>      
+
+        <div class="form-group">
+            <label for="divisi-select">Pilih Divisi :</label>
+            <select class="form-control" id="divisi-select" name="divisi-select">
+                <option value="option1">Semua Divisi</option>
+                <option value="option2">Divisi Riset dan Teknologi</option>
+                <option value="option3">Divisi Komunikasi dan Informasi</option>
+                <option value="option4">Divisi Pendidikan</option>
+                <option value="option5">Divisi Dana dan Usaha</option>
+                <option value="option6">Divisi Minat dan Bakat</option>
+                <option value="option7">Divisi Hubungan Masyarakat</option>
+            </select>
+        </div>  
+        <button class="btn btn-primary" type="submit">Temukan</button>    
+    </form>
+
+    {{-- filter --}}
+
     <div class="site-section">
         <div class="container">
             <div class="row">

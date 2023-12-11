@@ -4,6 +4,17 @@
 @section('content')
     <!-- .site-mobile-menu -->
 
+    <style>
+        .hover-effect:hover {
+            transform: scale(1.015);
+        }
+
+        .hover-effect {
+            transition: 0.3s; 
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+    </style>
+
     <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url('{{ asset('assets/images/himasti.JPG') }}')"
         data-aos="fade" data-stellar-background-ratio="0.5" data-aos="fade">
         <div class="container">
@@ -57,9 +68,7 @@
                 <div class="site-section-heading text-center m-3 w-border col-md-10 mx-auto">
                     <h2 class="mb-5">VISI</h2>
                     <p>
-                        Menjadi program Teknik Informatika yang unggul yang berperan dalam
-                        menghasilkan dan memanfaatkan teknologi untuk mengembangkan
-                        potensi lokal bagi kemajuan bangsa pada tahun 2023.
+                        Menjadikan HIMASTI sebagai wadah dan sarana untuk menyalurkan minat dan bakat dalam bidang Informatika serta mengoptimalkan kinerja kerjasama antar anggota
                     </p>
                 </div>
             </div>
@@ -72,23 +81,24 @@
                 <div class="site-section-heading mb-5 text-center m-3 w-border col-md-10 mx-auto" data-aos="fade-up">
                     <h2 class="mb-5">MISI</h2>
                     <div class="text-justify">
-                        <ul>
-                            <li>
-                                <p>
-                                    Menyelenggarakan pendidikan teknik informatika yang bermutu, profesional dan diperhitungkan secara nasional.
-                                </p>
-                            </li>
-                            <li>
-                                <p>
-                                    Menyelenggarakan penelitian yang menghasilkan dan memanfaatkan teknologi untuk mengembangkan potensi lokal.
-                                </p>
-                            </li>
-                            <li>
-                                <p>
-                                    Melakukan pengabdian kepada masyarakat dalam bidang teknik informatika.
-                                </p>
-                            </li>
-                        </ul>
+                        <div class="d-flex align-items-center rounded p-3 mb-4 hover-effect">
+                            <div class="pr-3">&#129066;</div>
+                            <div>
+                                Menciptakan kepengurusan yang aktif dan menjalankan hak dan kewajiban yang bertanggung jawab
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center rounded p-3 mb-4 hover-effect">
+                            <div class="pr-3">&#129066;</div>
+                            <div>
+                                Menampung dan mendukung dalam menyampaikan aspirasi oleh sesama anggota
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center rounded p-3 mb-4 hover-effect">
+                            <div class="pr-3">&#129066;</div>
+                            <div>
+                                Mengadakan kegiatan yang bermanfaat dan mendukung tumbuhnya rasa kekeluargaan antar sesama anggota    
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
