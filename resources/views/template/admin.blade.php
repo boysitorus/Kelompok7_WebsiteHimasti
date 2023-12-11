@@ -19,7 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
-
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/ckeditor.js"></script>
 </head>
 
 <body id="page-top">
@@ -43,7 +43,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item ">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route("admin.home") }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -80,8 +80,8 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Portfolio -->
-            <li class="nav-item {{ request()->routeIs('admin.portfolio') ? 'active' : '' }}">
-                <a class="nav-link" href="#">
+            <li class="nav-item {{ request()->routeIs('admin.berita') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin.berita') }}">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Berita</span></a>
             </li>

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('/detailBerita', [DashboardController::class, 'getDetail'])->name('detailBerita');
+Route::get('/berita/{id}', [DashboardController::class, 'getDetail'])->name('detailBerita');
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 
 Route::prefix('kegiatan')->group(function () {
@@ -32,6 +32,11 @@ Route::prefix('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::prefix('admin')->group(function () {
         Route::get('/', [AdminController::class, 'index'])->name('admin.home');
+        
+        Route::prefix('berita')->group(function () {
+            Route::get('/', [AdminController::class, 'getBerita'])->name('admin.berita');
+            Route::post('/create', [AdminController::class, 'createBerita'])->name('admin.berita.create');
+        });
     });
 });
 

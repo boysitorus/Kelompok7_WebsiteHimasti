@@ -110,12 +110,12 @@ a {
     box-shadow: none !important; }
 
 .site-section {
-  padding: 3em 0; }
+  padding: 2em 0; }
   @media (min-width: 768px) {
     .site-section {
-      padding: 7em 0; } }
+      padding: 2em 0; } }
   .site-section.site-section-sm {
-    padding: 4em 0; }
+    padding: 2em 0; }
 
 .bg-text-line {
   display: inline;
@@ -1828,7 +1828,7 @@ figure figcaption {
 
 .featured-property-half-detail .image {
   background-size: cover;
-  background-position: top center;
+  background-position: center center;
   background-repeat: no-repeat;
   width: 100%;
   height: 600px; /* Adjust the height as needed */

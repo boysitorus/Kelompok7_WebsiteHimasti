@@ -40,20 +40,10 @@
                                         class="icon-menu h3"></span></a></div>
 
                             <ul class="site-menu js-clone-nav d-none d-lg-block">
-                                <li class="{{ Request::is('/') ? 'active' : '' }}">
-                                    <a href="{{ route('dashboard') }}">Beranda</a>
-                                </li>
+                                <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ route('dashboard') }}">Beranda</a></li>
                                 <li class="{{ Request::is('profile') ? 'active' : '' }}"><a href="{{ route('profile') }}">Profile</a></li>
-                                <li class="has-children {{ Request::is('kepengurusan') ? 'active' : '' }}">
-                                    <a href="#">Kepengurusan</a>
-                                    <ul class="dropdown arrow-top">
-                                        <li><a href="{{ route('kepengurusan') }}">2019</a></li>
-                                        <li><a href="{{ route('kepengurusan') }}">2020</a></li>
-                                        <li><a href="{{ route('kepengurusan') }}">2021</a></li>
-                                    </ul>
-                                </li>
+                                <li class="{{ Request::is('kepengurusan') ? 'active' : '' }}"><a href="{{ route('kepengurusan') }}">Kepengurusan</a></li>
                                 <li class="{{ Request::is('kegiatan') ? 'active' : '' }}"><a href="{{ route('kegiatan') }}">Kegiatan</a></li>
-
                             </ul>
                         </nav>
                     </div>
