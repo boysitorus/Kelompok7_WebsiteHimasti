@@ -42,7 +42,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item ">
+            <li class="nav-item {{ request()->routeIs('admin.home') ? 'active' : '' }}"">
                 <a class="nav-link" href="{{ route("admin.home") }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -52,8 +52,8 @@
             <hr class="sidebar-divider my-0">
             <!-- About -->
 
-            <li class="nav-item ">
-                <a class="nav-link" href="#">
+            <li class="nav-item {{ Str::startsWith(request()->route()->getName(), 'admin.kepengurusan') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin.kepengurusan') }}">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Kepengurusan</span></a>
             </li>

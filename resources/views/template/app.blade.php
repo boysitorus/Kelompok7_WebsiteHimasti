@@ -42,7 +42,7 @@
                             <ul class="site-menu js-clone-nav d-none d-lg-block">
                                 <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ route('dashboard') }}">Beranda</a></li>
                                 <li class="{{ Request::is('profile') ? 'active' : '' }}"><a href="{{ route('profile') }}">Profile</a></li>
-                                <li class="{{ Request::is('kepengurusan') ? 'active' : '' }}"><a href="{{ route('kepengurusan') }}">Kepengurusan</a></li>
+                                <li class="{{ Str::startsWith(request()->route()->getName(), 'kepengurusan') ? 'active' : '' }}"><a href="{{ route('kepengurusan') }}">Kepengurusan</a></li>
                                 <li class="{{ Request::is('kegiatan') ? 'active' : '' }}"><a href="{{ route('kegiatan') }}">Kegiatan</a></li>
                             </ul>
                         </nav>

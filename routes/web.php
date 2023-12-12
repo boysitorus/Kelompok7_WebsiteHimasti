@@ -36,6 +36,37 @@ Route::middleware('auth')->group(function () {
         Route::prefix('berita')->group(function () {
             Route::get('/', [AdminController::class, 'getBerita'])->name('admin.berita');
             Route::post('/create', [AdminController::class, 'createBerita'])->name('admin.berita.create');
+            Route::post('/update', [AdminController::class, 'updateBerita'])->name('admin.berita.update');
+            Route::post('/delete', [AdminController::class, 'deleteBerita'])->name('admin.berita.delete');
+        });
+
+        Route::prefix('kepengurusan')->group(function () {
+            Route::get('/', [AdminController::class, 'getKepengurusan'])->name('admin.kepengurusan');
+            Route::post('/create', [AdminController::class, 'createKepengurusan'])->name('admin.kepengurusan.create');
+            Route::post('/delete', [AdminController::class, 'deleteKepengurusan'])->name('admin.kepengurusan.delete');
+
+            Route::prefix('/divisi')->group(function () {
+                Route::get('/{year}', [AdminController::class, 'getDetailKepengurusan'])->name('admin.kepengurusan.detail');
+                Route::post('/create', [AdminController::class, 'createDivisi'])->name('admin.kepengurusan.divisi.create');
+                Route::post('/delete', [AdminController::class, 'deleteDivisi'])->name('admin.kepengurusan.divisi.delete');
+
+                Route::prefix('/detail')->group(function () {
+                    Route::get('/{tahun}/{divisi}', [AdminController::class, 'getDetailDivisi'])->name('admin.kepengurusan.divisi.detail');
+                    Route::prefix('/keanggotaan')->group(function() {
+                       Route::get('/{tahun}/{divisi}', [AdminController::class, 'getKeanggotaan'])->name('admin.kepengurusan.divisi.keanggotaan');
+                       Route::post('/create', [AdminController::class, 'createMember'])->name('admin.kepengurusan.divisi.keanggotaan.create');
+                       Route::post('/update', [AdminController::class, 'updateMember'])->name('admin.kepengurusan.divisi.keanggotaan.update');
+                       Route::post('/delete', [AdminController::class, 'deleteMember'])->name('admin.kepengurusan.divisi.keanggotaan.delete');
+                    });
+                    Route::prefix('/proker')->group(function() {
+                        Route::get('/{tahun}/{divisi}', [AdminController::class, 'getProker'])->name('admin.kepengurusan.divisi.proker');
+                        // Route::post('/create', [AdminController::class, 'createMember'])->name('admin.kepengurusan.divisi.proker.create');
+                        // Route::post('/update', [AdminController::class, 'updateMember'])->name('admin.kepengurusan.divisi.proker.update');
+                    });
+
+                });
+                
+            });
         });
     });
 });

@@ -14,7 +14,7 @@ class NewsTableSeeder extends Seeder
     public function run(): void
     {
         News::create([
-
+            
         ]);
     }
 }
