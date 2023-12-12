@@ -15,7 +15,39 @@
         <div class="container">
             <div class="row">
 
-            <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="300">
+                {{-- filter --}}
+
+                <form method="" class="container mt-3 mb-5" onsubmit="return false;">
+                    <h2 id="judul-kepengurusan">Kegiatan Tahun 2023</h2>
+
+                    <div class="form-group">
+                        <label for="tahun-select">Pilih Tahun Kegiatan :</label>
+                        <select class="form-control" id="tahun-select" name="tahun-select">
+                            <option value="2021">Kegiatan Tahun 2021</option>
+                            <option value="2022">Kegiatan Tahun 2022</option>
+                            <option value="2023">Kegiatan Tahun 2023</option>
+                            <!-- Tambahkan tahun-tahun berikutnya sesuai kebutuhan -->
+                        </select>
+                    </div>     
+
+                    <div class="form-group">
+                        <label for="divisi-select">Pilih Divisi :</label>
+                        <select class="form-control" id="divisi-select" name="divisi-select">
+                            <option value="option1">Semua Divisi</option>
+                            <option value="option2">Divisi Riset dan Teknologi</option>
+                            <option value="option3">Divisi Komunikasi dan Informasi</option>
+                            <option value="option4">Divisi Pendidikan</option>
+                            <option value="option5">Divisi Dana dan Usaha</option>
+                            <option value="option6">Divisi Minat dan Bakat</option>
+                            <option value="option7">Divisi Hubungan Masyarakat</option>
+                        </select>
+                    </div>  
+                    <button class="btn btn-primary" onclick="changeTitle()">Temukan</button>   
+                </form>
+
+                {{-- filter --}}
+
+                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="300">
                     <a href="{{ route('detailKegiatan') }}"><img src={{ asset('assets/images/temu22.jpg') }} alt="Image" class="img-fluid" /></a>
                     <div class="p-4 bg-white">
                         <span class="d-block text-secondary small text-uppercase">Okt 28th, 2023</span>
@@ -118,4 +150,11 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function changeTitle() {
+            var selectedYear = document.getElementById("tahun-select").value;
+            document.getElementById("judul-kepengurusan").innerText = "Kegiatan Tahun " + selectedYear;
+        }
+    </script>
 @endsection

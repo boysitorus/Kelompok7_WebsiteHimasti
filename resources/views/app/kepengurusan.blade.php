@@ -16,17 +16,18 @@
 
     {{-- filter --}}
 
-    <form method="" class="container mt-5">
-        <h2>Kepengurusan 2021</h2>
+    <form method="" class="container mt-5" onsubmit="return false;">
+        <h2 id="judul-kepengurusan">Kepengurusan Tahun 2023</h2>
 
         <div class="form-group">
             <label for="tahun-select">Pilih Tahun Kepengurusan :</label>
             <select class="form-control" id="tahun-select" name="tahun-select">
-                <option value="option1">Tahun Kepengurusan 2019 / 2020</option>
-                <option value="option2">Tahun Kepengususan 2020 / 2021</option>
-                <option value="option3">Tahun Kepengurusan 2021 / 2022</option>
+                <option value="2021">Kepengurusan Tahun 2021</option>
+                <option value="2022">Kepengususan Tahun 2022</option>
+                <option value="2023">Kepengurusan Tahun 2023</option>
+                <!-- Tambahkan tahun-tahun berikutnya sesuai kebutuhan -->
             </select>
-        </div>      
+        </div>     
 
         <div class="form-group">
             <label for="divisi-select">Pilih Divisi :</label>
@@ -40,7 +41,7 @@
                 <option value="option7">Divisi Hubungan Masyarakat</option>
             </select>
         </div>  
-        <button class="btn btn-primary" type="submit">Temukan</button>    
+        <button class="btn btn-primary" onclick="changeTitle()">Temukan</button>   
     </form>
 
     {{-- filter --}}
@@ -629,4 +630,12 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function changeTitle() {
+            var selectedYear = document.getElementById("tahun-select").value;
+            document.getElementById("judul-kepengurusan").innerText = "Kepengurusan Tahun " + selectedYear;
+        }
+    </script>
+
 @endsection

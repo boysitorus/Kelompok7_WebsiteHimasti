@@ -47,15 +47,7 @@
                 <div class="site-section-heading text-center m-3 w-border col-md-10 mx-auto">
                     <h2 class="mb-5">SEJARAH</h2>
                     <p>
-                        Program Studi S1 Teknik Informatika merupakan salah satu dari 3
-                        (empat) program studi di bawah Fakultas Teknik Informatika dan
-                        Elektro di Institut Teknologi Del. Prodi S1 Informatika ini di
-                        rancang sejak tahun 2013 dan beroperasi pada tahun 2014 bersama
-                        dengan 2 prodi lainnya yaitu prodi S1 Teknik Elektro dan S1 Sistem
-                        Informasi. Ketiga prodi ini tergabung dalam 1 fakultas yaitu FITE
-                        (Fakultas Teknik Elektro dan Informatika). Fakultas ini berdiri
-                        pada tahun 2013 seiring dengan perubahan Politeknik Informatika
-                        Del (PI Del) menjadi Institut Teknologi Del (IT Del).
+                        Himasti terbentuk sejak tahun 2014, dengan hasrat yang tinggi untuk mewujudkan terbentuknya himpunan di tingkat prodi yang berfokus pada bidang keilmuwan dan profesi. Maka, bersamaan dengan terbentuknya program studi S1 Teknik Informatika dibentuklah Himasti. Sampai sekarang sudah ada sekitar 20 kepengurusan. HIMASTI JAYA
                     </p>
                 </div>
             </div>
