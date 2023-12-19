@@ -8,8 +8,7 @@
             Tambah
         </a>
         <!-- MODAL ADD BERITA-->
-        <div class="modal fade" id="addBerita" tabindex="-1" role="dialog" aria-labelledby="addBeritaModal"
-            aria-hidden="true">
+        <div class="modal fade" id="addBerita" tabindex="-1" role="dialog" aria-labelledby="addBeritaModal" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -19,24 +18,44 @@
                         </button>
                     </div>
 
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul id="errorMessages">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <form action="{{ route('admin.berita.create') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label for="title">Title</label>
-                                <input type="text" id="title" name="title" class="form-control" required>
+                                <input type="text" id="title" name="title" class="form-control"
+                                    value="{{ old('field') }}">
                                 <label for="date">Date</label>
-                                <input type="date" id="date" name="date" class="form-control" required>
+                                <input type="date" id="date" name="date" class="form-control">
+
                                 <label for="detail">Detail</label>
                                 <textarea id="detail" name="detail" class="form-control"></textarea>
                                 <label for="picture" class="form-label mt-2">Upload Picture</label>
                                 <input class="form-control" name="picture" type="file" id="picture"
-                                    accept="image/png, image/jpeg, image/jpg" required>
+                                    accept="image/png, image/jpeg, image/jpg">
                                 <label for="type">Pilih Type :</label>
                                 <select name="type" id="type" class="form-control">
                                     <option value="event" selected>Event</option>
                                     <option value="ucapan">Ucapan</option>
                                 </select>
+
+
 
                             </div>
 
@@ -44,7 +63,7 @@
                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                                 <button id="submit" class="btn btn-primary" type="submit">Add</button>
                             </div>
-                       
+
                     </form>
 
                     <script>
@@ -58,6 +77,15 @@
                             .catch(error => {
                                 console.error(error);
                             });
+
+                        $(document).ready(function() {
+                            // Check if there are validation errors and show the modal
+                            @if ($errors->any())
+                                $(document).ready(function() {
+                                    $('#addBerita').modal('show');
+                                });
+                            @endif
+                        });
                     </script>
                 </div>
             </div>
@@ -110,39 +138,50 @@
                                             </button>
                                         </div>
 
-                                        <form action="{{ route('admin.berita.update') }}" method="POST" enctype="multipart/form-data">
+                                        <form action="{{ route('admin.berita.update') }}" method="POST"
+                                            enctype="multipart/form-data">
                                             @csrf
                                             <div class="modal-body">
                                                 <div class="mb-3">
                                                     <input name="id" type="hidden" id="inputIdBerita"
                                                         value="{{ $berita->id }}">
                                                     <label for="title">Title</label>
-                                                    <input placeholder="{{ $berita->title }}" type="text" id="title" name="title" class="form-control">
+                                                    <input placeholder="{{ $berita->title }}" type="text"
+                                                        id="title" name="title" class="form-control">
+
                                                     <label for="date">Date</label>
-                                                    <input placeholder="{{ $berita->date }}" type="date" id="date" name="date" class="form-control">
+                                                    <input placeholder="{{ $berita->date }}" type="date"
+                                                        id="date" name="date" class="form-control">
                                                     <label for="updateDetail">Detail</label>
-                                                    <textarea placeholder="{!! $berita->detail !!}" id="updateDetail" name="updateDetail" class="form-control"></textarea>
+                                                    <textarea placeholder="{!! $berita->detail !!}" id="updateDetail-{{ $counter }}" name="updateDetail"
+                                                        class="form-control"></textarea>
                                                     <label for="picture" class="form-label mt-2">Update Picture</label>
-                                                    <input class="form-control" name="picture" type="file" id="picture"
-                                                        accept="image/png, image/jpeg, image/jpg">
+                                                    <input class="form-control" name="picture" type="file"
+                                                        id="picture" accept="image/png, image/jpeg, image/jpg">
                                                     <label for="type">Pilih Type :</label>
                                                     <select name="type" id="type" class="form-control">
-                                                        <option value="event" {{ $berita->type === 'event' ? 'selected' : '' }}>Event</option>
-                                                        <option value="ucapan" {{ $berita->type === 'ucapan' ? 'selected' : '' }} >Ucapan</option>
+                                                        <option value="event"
+                                                            {{ $berita->type === 'event' ? 'selected' : '' }}>Event
+                                                        </option>
+                                                        <option value="ucapan"
+                                                            {{ $berita->type === 'ucapan' ? 'selected' : '' }}>Ucapan
+                                                        </option>
                                                     </select>
                                                 </div>
-                    
+
                                                 <div class="modal-footer">
-                                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                                                    <button id="submit" class="btn btn-primary" type="submit">Update</button>
+                                                    <button class="btn btn-secondary" type="button"
+                                                        data-dismiss="modal">Cancel</button>
+                                                    <button id="submit" class="btn btn-primary"
+                                                        type="submit">Update</button>
                                                 </div>
                                         </form>
 
                                         <script>
-                                            let updateEditor;
-                    
+                                            let updateEditor_{{ $counter }};;
+
                                             ClassicEditor
-                                                .create(document.querySelector('#updateDetail'))
+                                                .create(document.querySelector('#updateDetail-{{ $counter }}'))
                                                 .then(newEditor => {
                                                     updateEditor = newEditor;
                                                 })
@@ -162,8 +201,8 @@
                                 Delete
                             </a>
 
-                            <div class="modal fade" id="deleteBerita-{{ $counter }}" tabindex="-1"
-                                role="dialog" aria-labelledby="deleteBeritaModal" aria-hidden="true">
+                            <div class="modal fade" id="deleteBerita-{{ $counter }}" tabindex="-1" role="dialog"
+                                aria-labelledby="deleteBeritaModal" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -184,8 +223,10 @@
                                             <div class="modal-footer">
                                                 <form action="{{ route('admin.berita.delete') }}" method="POST">
                                                     @csrf
-                                                    <input name="id" type="hidden" id="inpuDeletePortfolioId" value="{{ $berita->id }}">
-                                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                                    <input name="id" type="hidden" id="inpuDeletePortfolioId"
+                                                        value="{{ $berita->id }}">
+                                                    <button class="btn btn-secondary" type="button"
+                                                        data-dismiss="modal">Cancel</button>
                                                     <button class="btn btn-danger" type="submit">Delete</button>
                                                 </form>
                                             </div>
@@ -194,7 +235,6 @@
                                     </div>
 
                         </td>
-                        
 
                     </tr>
                 @endforeach

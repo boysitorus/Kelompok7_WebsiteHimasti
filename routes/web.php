@@ -60,13 +60,26 @@ Route::middleware('auth')->group(function () {
                     });
                     Route::prefix('/proker')->group(function() {
                         Route::get('/{tahun}/{divisi}', [AdminController::class, 'getProker'])->name('admin.kepengurusan.divisi.proker');
-                        // Route::post('/create', [AdminController::class, 'createMember'])->name('admin.kepengurusan.divisi.proker.create');
-                        // Route::post('/update', [AdminController::class, 'updateMember'])->name('admin.kepengurusan.divisi.proker.update');
+                        Route::post('/create', [AdminController::class, 'createProker'])->name('admin.kepengurusan.divisi.proker.create');
+                        Route::post('/delete', [AdminController::class, 'deleteProker'])->name('admin.kepengurusan.divisi.proker.delete');
                     });
 
                 });
                 
             });
+        });
+
+        Route::prefix('kegiatan')->group(function () {
+            Route::prefix('/notdone')->group(function () {
+                Route::get('/', [AdminController::class, 'getNotDone'])->name('admin.kegiatan.notdone');
+                Route::post('/update', [AdminController::class, 'updateNotDone'])->name('admin.kegiatan.notdone.update');
+            });
+            
+            // Route::prefix('/done')->group(function () {
+            //     Route::get('/done', [AdminController::class, 'getDone'])->name('admin.kegiatan.done');
+            //     Route::post('/update', [AdminController::class, 'updateDone'])->name('admin.kegiatan.done.update');
+            // });
+            
         });
     });
 });

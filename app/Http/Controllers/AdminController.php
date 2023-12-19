@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Management;
 use App\Models\Member;
+use App\Models\Program;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\News;
@@ -107,11 +108,60 @@ class AdminController extends Controller
 
         $management = Management::where('divisi', $divisi)->where('year', $tahun)->first();
         $members = Member::where('divisi', $divisi)->where('year', $tahun)->orderByRaw("CASE WHEN jabatan = 'Ketua' THEN 1 WHEN jabatan = 'Wakil Ketua' THEN 2 ELSE 3 END")->get();
+        $checkKetua = false;
+        $checkWakilKetua = false;
+        
+
+        if($members->where('jabatan', 'Ketua')->first()){
+            $checkKetua = true;
+        }
+
+        if($members->where('jabatan', 'Wakil Ketua')->first()){
+            $checkWakilKetua = true;
+        }
+
+        if($divisi === "Badan Pengurus Harian"){
+            $checkSekretaris = false;
+            $checkWakilSekretaris = false;
+            $checkBendahara = false;
+            $checkWakilBendahara = false;
+
+            if($members->where('jabatan', 'Sekretaris')->first()){
+                $checkSekretaris = true;
+            }
+            if($members->where('jabatan', 'Wakil Sekretaris')->first()){
+                $checkWakilSekretaris = true;
+            }
+            if($members->where('jabatan', 'Bendahara')->first()){
+                $checkBendahara = true;
+            }
+            if($members->where('jabatan', 'Wakil Bendahara')->first()){
+                $checkWakilBendahara = true;
+            }
+            
+
+            $data = [
+                "auth" => $auth,
+                "management" => $management,
+                "members" => $members,
+                "checkKetua" => $checkKetua,
+                "checkWakilKetua" => $checkWakilKetua,
+                "checkSekretaris" => $checkSekretaris,
+                "checkWakilSekretaris" => $checkWakilSekretaris,
+                "checkBendahara" => $checkBendahara,
+                "checkWakilBendahara" => $checkWakilBendahara
+            ];
+
+            return view('admin.kepengurusan.keanggotaan', $data);
+
+        }
 
         $data = [
             "auth" => $auth,
             "management" => $management,
-            "members" => $members
+            "members" => $members,
+            "checkKetua" => $checkKetua,
+            "checkWakilKetua" => $checkWakilKetua
         ];
 
         return view('admin.kepengurusan.keanggotaan', $data);
@@ -190,7 +240,57 @@ class AdminController extends Controller
 
         return redirect()->back();
     }
+
+    public function getProker($tahun, $divisi){
+        $auth = Auth::user();
+
+        $management = Management::where('divisi', $divisi)->where('year', $tahun)->first();
+        $programs = Program::where('divisi', $divisi)->where('year', $tahun)->get();
+
+        $data = [
+            "auth" => $auth,
+            "management" => $management,
+            "programs" => $programs
+            
+        ];
+
+        return view('admin.kepengurusan.proker', $data);
+    }
     
+    public function createProker(Request $request){
+        $request->validate([
+            'title' => 'required',
+            'detail' => 'required',
+        ]);
+
+        Program::create([
+            'title' => $request->title,
+            'detail' => $request->detail,
+            'divisi' => $request->divisi,
+            'year' => $request->year,
+            'status' => 'Belum Terlaksana'
+        ]);
+        return redirect()->back();
+    }
+
+    public function deleteProker(Request $request){
+        Program::where("id", $request->id)->first()->delete();
+
+        return redirect()->back();
+    }
+
+    public function getNotDone(){
+        $auth = Auth::user();
+
+        $programs = Program::where("status", "Belum Terlaksana")->orderBy("status", "desc")->get();
+
+        $data = [
+            "auth" => $auth,
+            "programs" => $programs
+        ];
+
+        return view('admin.kegiatan.notdone', $data);
+    }
 
     public function getBerita(){
         $auth = Auth::user();
@@ -206,13 +306,17 @@ class AdminController extends Controller
     }
 
     public function createBerita(Request $request){
-        $request->validate([
+        $validator=Validator::make($request->all(), [
             'picture' => 'required|image|mimes:jpeg,png,jpg',
             'title' => 'required',
             'detail' => 'required',
             'date' => 'required',
             'type' => 'required',
         ]);
+
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
 
         $news = News::create([
             'title' => $request->title,

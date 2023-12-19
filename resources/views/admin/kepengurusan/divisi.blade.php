@@ -21,10 +21,10 @@
                             Keanggotaan
                         </a>
                     </div>
-                    @if (!$management->divisi === 'Badan Pengurus Harian')
+                    @if ($management->divisi != 'Badan Pengurus Harian')
                         <div class="d-flex align-items-start rounded p-3 mb-4 animasi-kartu">
                             <div class="pr-3">&#129066;</div>
-                            <a href="#">
+                            <a href="{{ route('admin.kepengurusan.divisi.proker', ['tahun' => $management->year, 'divisi' => $management->divisi]) }}">
                                 Program Kerja
                             </a>
                         </div>

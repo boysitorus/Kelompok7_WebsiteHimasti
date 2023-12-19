@@ -14,7 +14,11 @@ class NewsTableSeeder extends Seeder
     public function run(): void
     {
         News::create([
-            
+            'title' => 'Guntur Austin Sinaga',
+            'date' => '2003-09-15',
+            'detail' => 'lorem ipsum',
+            'picture' =>'img/news_pictures/gambar1.PNG',
+            'type' => 'ucapan'
         ]);
     }
 }

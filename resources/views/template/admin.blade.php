@@ -20,6 +20,7 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
     <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/ckeditor.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -60,7 +61,7 @@
             
             <hr class="sidebar-divider my-0">
 
-            <li class="nav-item {{ request()->routeIs('admin.about.profile') || request()->routeIs('admin.about.skill') ? 'active' : '' }}">
+            <li class="nav-item {{ request()->routeIs('admin.kegiatan.notdone') || request()->routeIs('admin.kegiatan.done') ? 'active' : '' }}">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAbout"
                     aria-expanded="true" aria-controls="collapseAbout">
                     <i class="fas fa-fw fa-calendar"></i>
@@ -70,7 +71,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         
                         <a class="collapse-item" href="#">Terlaksana</a>
-                        <a class="collapse-item" href="#">Belum Terlaksana</a>
+                        <a class="collapse-item" href="{{ route('admin.kegiatan.notdone') }}">Belum Terlaksana</a>
                     </div>
                 </div>
             </li>
