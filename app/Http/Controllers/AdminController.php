@@ -51,7 +51,11 @@ class AdminController extends Controller
         return redirect()->back();
     }
     public function deleteKepengurusan(Request $request){
+        Member::where("year", $request->tahun)->delete();
+        Program::where("year", $request->tahun)->delete();
+        
         Management::where("year", $request->tahun)->delete();
+
         return redirect()->back();
     }
 

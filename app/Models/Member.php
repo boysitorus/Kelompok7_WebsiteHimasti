@@ -13,7 +13,7 @@ class Member extends Model
 
     protected $fillable = ['nim', 'nama', 'jabatan', 'divisi', 'year', 'picture'];
 
-    protected $primaryKey = 'nim';
+    protected $primaryKey = ['nim', 'year'];
 
     public $incrementing = false;
 }

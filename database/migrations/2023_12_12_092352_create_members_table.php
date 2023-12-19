@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('picture')->nullable();
             $table->timestamps();
 
-            $table->primary('nim');
+            $table->primary(['nim', 'year']);
 
             $table->foreign(['year', 'divisi'])
             ->references(['year', 'divisi'])

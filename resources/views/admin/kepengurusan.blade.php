@@ -77,7 +77,7 @@
 
                                         <div class="modal-body">
                                             <div class="mb-3">
-                                                Kamu akan menghapus Kepengurusan
+                                                Kamu akan menghapus Kepengurusan, dan semua konten yang ada didalamnya
                                                 <strong class="text-danger" id="deleteKepengurusan"></strong>.
                                                 Apakah kamu yakin?
                                             </div>
