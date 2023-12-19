@@ -70,7 +70,7 @@
                 <div id="collapseAbout" class="collapse" aria-labelledby="headingAbout" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         
-                        <a class="collapse-item" href="#">Terlaksana</a>
+                        <a class="collapse-item" href="{{ route("admin.kegiatan.done") }}">Terlaksana</a>
                         <a class="collapse-item" href="{{ route('admin.kegiatan.notdone') }}">Belum Terlaksana</a>
                     </div>
                 </div>
@@ -246,7 +246,6 @@
     <!-- Page level custom scripts -->
     <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
     <script src="{{ asset('js/demo/chart-pie-demo.js') }}"></script>
-
 </body>
 
 </html>

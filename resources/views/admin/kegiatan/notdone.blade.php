@@ -12,7 +12,7 @@
                     <th scope="col">Judul</th>
                     <th scope="col">Divisi</th>
                     <th scope="col">Tahun</th>
-                    <th scope="col">Status</th>
+                    
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -27,7 +27,7 @@
                             <td>{{ $program->title }}</td>
                             <td>{{ $program->divisi }}</td>
                             <td>{{ $program->year }}</td>
-                            <td>{{ $program->status }}</td>
+                            
 
                             <td>
                                 <a class="btn btn-sm btn-warning" href="#" data-toggle="modal"
@@ -61,8 +61,8 @@
                                                         <label for="date">Date</label>
                                                         <input placeholder="{{ $program->date }}" type="date"
                                                             id="date" name="date" class="form-control">
-                                                        <label for="updateDetail">Detail</label>
-                                                        <textarea placeholder="{!! $program->detail !!}" id="updateDetail" name="updateDetail" class="form-control"></textarea>
+                                                        <label for="updateLaporan">Laporan</label>
+                                                        <textarea id="updateLaporan-{{$counter}}" name="updateLaporan" class="form-control"></textarea>
                                                         <label for="picture" class="form-label mt-2">Update Picture</label>
                                                         <input class="form-control" name="picture" type="file"
                                                             id="picture" accept="image/png, image/jpeg, image/jpg">
@@ -77,10 +77,10 @@
                                             </form>
 
                                             <script>
-                                                let updateEditor;
+                                                let updateEditor_{{$counter}};
 
                                                 ClassicEditor
-                                                    .create(document.querySelector('#updateDetail'))
+                                                    .create(document.querySelector('#updateLaporan-{{ $counter }}'))
                                                     .then(newEditor => {
                                                         updateEditor = newEditor;
                                                     })

@@ -12,7 +12,7 @@
                     <th scope="col">Judul</th>
                     <th scope="col">Divisi</th>
                     <th scope="col">Tahun</th>
-                    <th scope="col">Status</th>
+                    
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -27,7 +27,7 @@
                             <td>{{ $program->title }}</td>
                             <td>{{ $program->divisi }}</td>
                             <td>{{ $program->year }}</td>
-                            <td>{{ $program->status }}</td>
+                            
 
                             <td>
                                 <a class="btn btn-sm btn-warning" href="#" data-toggle="modal"

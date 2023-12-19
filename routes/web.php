@@ -15,7 +15,7 @@ Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 
 Route::prefix('kegiatan')->group(function () {
     Route::get('/', [KegiatanController::class, 'index'])->name('kegiatan');
-    Route::get('/detail', [KegiatanController::class, 'getDetail'])->name('detailKegiatan');
+    Route::get('/detail/{id}', [KegiatanController::class, 'getDetail'])->name('detailKegiatan');
 });
 
 Route::prefix('kepengurusan')->group(function () {
@@ -75,10 +75,10 @@ Route::middleware('auth')->group(function () {
                 Route::post('/update', [AdminController::class, 'updateNotDone'])->name('admin.kegiatan.notdone.update');
             });
             
-            // Route::prefix('/done')->group(function () {
-            //     Route::get('/done', [AdminController::class, 'getDone'])->name('admin.kegiatan.done');
-            //     Route::post('/update', [AdminController::class, 'updateDone'])->name('admin.kegiatan.done.update');
-            // });
+            Route::prefix('/done')->group(function () {
+                Route::get('/', [AdminController::class, 'getDone'])->name('admin.kegiatan.done');
+                Route::post('/update', [AdminController::class, 'updateDone'])->name('admin.kegiatan.done.update');
+            });
             
         });
     });

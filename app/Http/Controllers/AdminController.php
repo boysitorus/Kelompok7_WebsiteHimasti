@@ -273,6 +273,45 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+    public function updateNotDone(Request $request){
+        $program = Program::where('id', $request->id)->first();
+        
+        if(!empty($request->input('title'))){
+            $program->title = $request->input('title');
+        }
+        if(!empty($request->input('date'))){
+            $program->date = $request->input('date');
+        }
+        if(!empty($request->input('updateLaporan'))){
+            $program->laporan = $request->input('updateLaporan');
+        }
+        if(($request->file('picture')) != null){
+            
+            $picture = $request->file('picture');
+           
+            $filename = $program->id . "_" . time() . '.' . $picture->getClientOriginalExtension();
+            
+            $directory = public_path('img/programs');
+            
+            $picture->move($directory, $filename);
+
+            if ($program->picture && file_exists($program->picture)) {
+                unlink($program->picture);
+            }
+            
+            $program->picture = "img/programs/" . $filename;
+        }
+
+        $program->save();
+
+        if($program->laporan != null && $program->date != null && $program->picture != null){
+            $program->status = "Terlaksana";
+
+            $program->save();
+        }
+
+        return redirect()->back();
+    }
     public function deleteProker(Request $request){
         Program::where("id", $request->id)->first()->delete();
 
@@ -290,6 +329,19 @@ class AdminController extends Controller
         ];
 
         return view('admin.kegiatan.notdone', $data);
+    }
+
+    public function getDone(){
+        $auth = Auth::user();
+
+        $programs = Program::where("status", "Terlaksana")->orderBy("id", "asc")->get();
+
+        $data = [
+            "auth" => $auth,
+            "programs" => $programs
+        ];
+
+        return view('admin.kegiatan.done', $data); 
     }
 
     public function getBerita(){
@@ -335,7 +387,7 @@ class AdminController extends Controller
         
         $news->picture = "img/news_pictures/" . $filename;
         $news->save();
-        return redirect()->back();
+        return redirect()->back()->with('success', 'News added successfully');;
     }
 
     public function updateBerita(Request $request){
