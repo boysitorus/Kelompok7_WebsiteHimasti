@@ -392,11 +392,8 @@ class AdminController extends Controller
         
         $news->picture = "img/news_pictures/" . $filename;
 
-        $news->picture = 'img/news_pictures/default.jpg';
         $news->save();
         return redirect()->back()->with('success', 'News added successfully');
-
-
     }
 
     public function updateBerita(Request $request){

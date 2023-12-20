@@ -17,7 +17,7 @@
     </div>
 
     <div class="container">
-        <div class="featured-property-half-detail d-flex" style="margin-top: -300px">
+        <div class="featured-property-half-detail d-flex" style="margin-top: -250px">
             <div class="image" style="background-image: url('{{asset($program->picture) }}')"></div>
             
         </div>

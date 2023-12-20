@@ -62,7 +62,7 @@
                                                         <input placeholder="{{ $program->date }}" type="date"
                                                             id="date" name="date" class="form-control">
                                                         <label for="updateLaporan">Laporan</label>
-                                                        <textarea id="updateLaporan-{{$counter}}" name="updateLaporan" class="form-control"></textarea>
+                                                        <textarea placeholder="{{ $program->laporan != null ? $program->laporan : '' }}" id="updateLaporan-{{$counter}}" name="updateLaporan" class="form-control"></textarea>
                                                         <label for="picture" class="form-label mt-2">Update Picture</label>
                                                         <input class="form-control" name="picture" type="file"
                                                             id="picture" accept="image/png, image/jpeg, image/jpg">
