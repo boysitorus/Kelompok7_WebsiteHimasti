@@ -9,8 +9,9 @@ use Illuminate\Http\Request;
 
 class KepengurusanController extends Controller
 {
-    public function index(Request $request){
-       
+    public function index(Request $request)
+    {
+
         $tahun = $request->get('tahun-select') ?? null;
         $divisi = $request->get('divisi-select') ?? null;
         $latestYear = Management::max('year');
@@ -21,15 +22,15 @@ class KepengurusanController extends Controller
         $managements = Management::select("*");
         $members = Member::select("*");
 
-        if($tahun != null){
+        if ($tahun != null) {
             $managements = $managements->where('year', $tahun);
             $members = $members->where('year', $tahun);
-        }else{
+        } else {
             $managements = $managements->where('year', $latestYear);
             $members = $members->where('year', $latestYear);
         }
 
-        if($divisi != null && $divisi != '*'){
+        if ($divisi != null && $divisi != '*') {
             $managements = $managements->where('divisi', $divisi);
             $members = $members->where('divisi', $divisi);
         }
@@ -51,10 +52,11 @@ class KepengurusanController extends Controller
         return view("app.kepengurusan", $data);
     }
 
-    public function getDetail($tahun, $divisi){
+    public function getDetail($tahun, $divisi)
+    {
         $management = Management::where('divisi', $divisi)->where('year', $tahun)->first();
 
-        $programs = Program::where('divisi', $divisi)->where('year', $tahun)->where('status', 'Terlaksana')->get();
+        $programs = Program::where('divisi', $divisi)->where('year', $tahun)->get();
 
         $data = [
             'programs' => $programs,

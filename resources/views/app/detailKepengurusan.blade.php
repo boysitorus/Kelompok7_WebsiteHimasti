@@ -33,12 +33,37 @@
                 <div class="site-section-heading m-3 w-border col-md-10 mx-auto">
                     <h2 class="mb-5 align-self-center">Program Kerja</h2>
 
+                    @php
+                        $count = 0;
+                    @endphp
+
                     @foreach ($programs as $program)
-                        <div class="d-flex align-items-center rounded p-3 mb-4 hover-effect">
+                        {{-- <div class="d-flex align-items-center rounded p-3 mb-4 hover-effect">
                             <div class="pr-3">&#129066;</div>
                             <div>
                                 {{ $program->title }}
                             </div>
+                        </div> --}}
+
+                        <div id="accordion">
+                            <div class="card mb-3 shadow">
+                                <div class="card-header" id="headingOne">
+                                    <h3 class="mb-0 text-dark">
+                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse-{{ $count }}" aria-expanded="true" aria-controls="collapse-{{ $count }}">
+                                            {{ $program->title }}
+                                        </button>
+                                    </h3>
+                                </div>
+
+                                <div id="collapse-{{ $count }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div class="card-body">
+                                        {!! $program->detail !!}
+                                    </div>
+                                </div>
+                            </div>
+                            @php
+                                $count++;
+                            @endphp
                         </div>
                     @endforeach
 
