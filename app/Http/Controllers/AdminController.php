@@ -363,7 +363,7 @@ class AdminController extends Controller
 
     public function createBerita(Request $request){
         $validator=Validator::make($request->all(), [
-            'picture' => 'required|image|mimes:jpeg,png,jpg',
+            // 'picture' => 'required|image|mimes:jpeg,png,jpg', //dikomen untuk keperluan testing
             'title' => 'required',
             'detail' => 'required',
             'date' => 'required',
@@ -379,19 +379,24 @@ class AdminController extends Controller
             'date' => $request->date,
             'detail' => $request->detail,
             'type' => $request->get('type'),
+            
         ]);
 
-        $picture = $request->file('picture');
+        // $picture = $request->file('picture');
         
-        $filename = $news->id . "_" . time() . '.' . $picture->getClientOriginalExtension();
+        // $filename = $news->id . "_" . time() . '.' . $picture->getClientOriginalExtension();
         
-        $directory = public_path('img/news_pictures');
+        // $directory = public_path('img/news_pictures');
        
-        $picture->move($directory, $filename);
+        // $picture->move($directory, $filename);
         
-        $news->picture = "img/news_pictures/" . $filename;
+        // $news->picture = "img/news_pictures/" . $filename;
+
+        $news->picture = 'img/news_pictures/default.jpg';
         $news->save();
-        return redirect()->back()->with('success', 'News added successfully');;
+        return redirect()->back()->with('success', 'News added successfully');
+
+
     }
 
     public function updateBerita(Request $request){

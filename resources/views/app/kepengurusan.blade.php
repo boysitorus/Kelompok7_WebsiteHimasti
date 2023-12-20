@@ -158,7 +158,7 @@
                 @endforeach
                     </div>
                     <div class="d-flex justify-content-center">
-                        <a href="{{ route('detailkepengurusan') }}" class="btn btn-primary px-4 py-3">Selengkapnya</a>
+                        <a href="{{ route('detailkepengurusan', ['tahun' => $management->year, 'divisi' => $management->divisi]) }}" class="btn btn-primary px-4 py-3">Selengkapnya</a>
                     </div>
                
             @endif

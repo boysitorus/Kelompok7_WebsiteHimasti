@@ -43,9 +43,12 @@ class KegiatanController extends Controller
 
         $program = Program::where('id', $id)->first();
 
+        
+
         $data = [
             'program' => $program
         ];
+
 
         return view("app.detailKegiatan", $data);
     }

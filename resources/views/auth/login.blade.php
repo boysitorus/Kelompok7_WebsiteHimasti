@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>PABWE Praktikum 10</title>
+    <title>Admin Panel</title>
     <link href="{{ asset('assets/vendor/bootstrap-5.2.3-dist/css/bootstrap.min.css') }}" rel="stylesheet" />
 </head>
 

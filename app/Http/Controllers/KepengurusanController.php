@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Management;
 use App\Models\Member;
+use App\Models\Program;
 use Illuminate\Http\Request;
 
 class KepengurusanController extends Controller
@@ -50,7 +51,16 @@ class KepengurusanController extends Controller
         return view("app.kepengurusan", $data);
     }
 
-    public function getDetail(){
-        return view("app.detailKepengurusan");
+    public function getDetail($tahun, $divisi){
+        $management = Management::where('divisi', $divisi)->where('year', $tahun)->first();
+
+        $programs = Program::where('divisi', $divisi)->where('year', $tahun)->where('status', 'Terlaksana')->get();
+
+        $data = [
+            'programs' => $programs,
+            'management' => $management
+        ];
+
+        return view("app.detailKepengurusan", $data);
     }
 }

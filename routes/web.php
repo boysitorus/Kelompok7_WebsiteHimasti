@@ -20,7 +20,7 @@ Route::prefix('kegiatan')->group(function () {
 
 Route::prefix('kepengurusan')->group(function () {
     Route::get('/', [KepengurusanController::class, 'index'])->name('kepengurusan');
-    Route::get('/detail', [KepengurusanController::class, 'getDetail'])->name('detailkepengurusan');
+    Route::get('/detail/{tahun}/{divisi}', [KepengurusanController::class, 'getDetail'])->name('detailkepengurusan');
 });
 
 Route::prefix('auth')->group(function () {
