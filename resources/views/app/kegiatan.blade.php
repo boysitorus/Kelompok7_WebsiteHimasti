@@ -50,7 +50,7 @@
                     @foreach ($programs as $program)
                         <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="300">
                             <a href="{{ route('detailKegiatan', $program->id) }}"><img
-                                    src={{ asset('assets/images/temu22.jpg') }} alt="Image" class="img-fluid" /></a>
+                                    src={{ asset($program->picture) }} alt="Image" class="img-fluid" /></a>
                             <div class="p-4 bg-white">
                                 <span class="d-block text-secondary small text-uppercase">{{ $program->date }}</span>
                                 <h2 class="h5 text-black mb-3">
