@@ -193,7 +193,7 @@ class AdminController extends Controller
 
         $filename = $request->nim . "_" . time() . '.' . $picture->getClientOriginalExtension();
 
-        $directory = public_path('public_html/img/members');
+        $directory = base_path('public_html/img/members');
 
         $picture->move($directory, $filename);
 
@@ -230,7 +230,7 @@ class AdminController extends Controller
 
             $filename = $member->nim . "_" . time() . '.' . $picture->getClientOriginalExtension();
 
-            $directory = public_path('public_html/img/members');
+            $directory = base_path('public_html/img/members');
 
             $picture->move($directory, $filename);
 
@@ -321,7 +321,7 @@ class AdminController extends Controller
 
             $filename = $program->id . "_" . time() . '.' . $picture->getClientOriginalExtension();
 
-            $directory = public_path('img/programs');
+            $directory = base_path('img/programs');
 
             $picture->move($directory, $filename);
 
@@ -417,7 +417,7 @@ class AdminController extends Controller
 
         $filename = $news->id . "_" . time() . '.' . $picture->getClientOriginalExtension();
 
-        $directory = public_path('img/news_pictures');
+        $directory = base_path('img/news_pictures');
 
         $picture->move($directory, $filename);
 
@@ -456,7 +456,7 @@ class AdminController extends Controller
 
             $filename = $berita->id . "_" . time() . '.' . $picture->getClientOriginalExtension();
 
-            $directory = public_path('img/news_pictures');
+            $directory = base_path('img/news_pictures');
 
             $picture->move($directory, $filename);
 

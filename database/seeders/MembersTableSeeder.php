@@ -20,7 +20,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Badan Pengurus Harian',
             'jabatan' => 'Ketua',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S21003_2023.png'
+            'picture' => 'img/members/11S21003_2023.png'
         ]);
 
         Member::create([
@@ -29,7 +29,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Badan Pengurus Harian',
             'jabatan' => 'Bendahara',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S21050_2023.png'
+            'picture' => 'img/members/11S21050_2023.png'
         ]);
 
         Member::create([
@@ -38,7 +38,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Badan Pengurus Harian',
             'jabatan' => 'Sekretaris',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S21048_2023.png'
+            'picture' => 'img/members/11S21048_2023.png'
         ]);
 
         Member::create([
@@ -47,7 +47,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Badan Pengurus Harian',
             'jabatan' => 'Wakil Ketua',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S22014_2023.png'
+            'picture' => 'img/members/11S22014_2023.png'
         ]);
 
         Member::create([
@@ -56,7 +56,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Badan Pengurus Harian',
             'jabatan' => 'Wakil Bendahara',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S22005_2023.png'
+            'picture' => 'img/members/11S22005_2023.png'
         ]);
 
         Member::create([
@@ -65,7 +65,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Badan Pengurus Harian',
             'jabatan' => 'Wakil Sekretaris',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S22051_2023.png'
+            'picture' => 'img/members/11S22051_2023.png'
         ]);
 
         //DIVISI RISET DAN TEKNOLOGI
@@ -75,7 +75,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Riset dan Teknologi',
             'jabatan' => 'Ketua',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S21025_2023.png'
+            'picture' => 'img/members/11S21025_2023.png'
         ]);
 
         Member::create([
@@ -84,7 +84,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Riset dan Teknologi',
             'jabatan' => 'Wakil Ketua',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S21028_2023.png'
+            'picture' => 'img/members/11S21028_2023.png'
         ]);
 
         Member::create([
@@ -93,7 +93,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Riset dan Teknologi',
             'jabatan' => 'Anggota',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S21016_2023.png'
+            'picture' => 'img/members/11S21016_2023.png'
         ]);
 
         Member::create([
@@ -102,7 +102,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Riset dan Teknologi',
             'jabatan' => 'Anggota',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S22039_2023.png'
+            'picture' => 'img/members/11S22039_2023.png'
         ]);
 
 
@@ -113,7 +113,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Minat dan Bakat',
             'jabatan' => 'Ketua',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S21015_2023.png'
+            'picture' => 'img/members/11S21015_2023.png'
         ]);
 
         Member::create([
@@ -122,7 +122,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Minat dan Bakat',
             'jabatan' => 'Wakil Ketua',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S22034_2023.png'
+            'picture' => 'img/members/11S22034_2023.png'
         ]);
 
         Member::create([
@@ -131,7 +131,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Minat dan Bakat',
             'jabatan' => 'Anggota',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S22004_2023.png'
+            'picture' => 'img/members/11S22004_2023.png'
         ]);
 
         Member::create([
@@ -140,7 +140,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Minat dan Bakat',
             'jabatan' => 'Anggota',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S22026_2023.png'
+            'picture' => 'img/members/11S22026_2023.png'
         ]);
         
         Member::create([
@@ -149,7 +149,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Minat dan Bakat',
             'jabatan' => 'Anggota',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S22021_2023.png'
+            'picture' => 'img/members/11S22021_2023.png'
         ]);
         
         Member::create([
@@ -158,7 +158,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Minat dan Bakat',
             'jabatan' => 'Anggota',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S22025_2023.png'
+            'picture' => 'img/members/11S22025_2023.png'
         ]);
         
         Member::create([
@@ -167,7 +167,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Minat dan Bakat',
             'jabatan' => 'Anggota',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S21043_2023.png'
+            'picture' => 'img/members/11S21043_2023.png'
         ]);
         
         //DANA DAN USAHA
@@ -177,7 +177,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Dana dan Usaha',
             'jabatan' => 'Ketua',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S21020_2023.png'
+            'picture' => 'img/members/11S21020_2023.png'
         ]);
         
         Member::create([
@@ -186,7 +186,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Dana dan Usaha',
             'jabatan' => 'Wakil Ketua',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S22044_2023.png'
+            'picture' => 'img/members/11S22044_2023.png'
         ]);
         
         Member::create([
@@ -195,7 +195,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Dana dan Usaha',
             'jabatan' => 'Anggota',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S22048_2023.png'
+            'picture' => 'img/members/11S22048_2023.png'
         ]);
         
         Member::create([
@@ -204,7 +204,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Dana dan Usaha',
             'jabatan' => 'Anggota',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S21021_2023.png'
+            'picture' => 'img/members/11S21021_2023.png'
         ]);
         
         Member::create([
@@ -213,7 +213,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Dana dan Usaha',
             'jabatan' => 'Anggota',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S22045_2023.png'
+            'picture' => 'img/members/11S22045_2023.png'
         ]);
         
         //HUBUNGAN MASYARAKAT
@@ -223,7 +223,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Hubungan Masyarakat',
             'jabatan' => 'Ketua',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S21055_2023.png'
+            'picture' => 'img/members/11S21055_2023.png'
         ]);
         
         Member::create([
@@ -232,7 +232,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Hubungan Masyarakat',
             'jabatan' => 'Wakil Ketua',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S21051_2023.png'
+            'picture' => 'img/members/11S21051_2023.png'
         ]);
 
         Member::create([
@@ -241,7 +241,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Hubungan Masyarakat',
             'jabatan' => 'Anggota',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S22031_2023.png'
+            'picture' => 'img/members/11S22031_2023.png'
         ]);
         
         Member::create([
@@ -250,7 +250,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Hubungan Masyarakat',
             'jabatan' => 'Anggota',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S22024_2023.png'
+            'picture' => 'img/members/11S22024_2023.png'
         ]);
         
         Member::create([
@@ -259,7 +259,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Hubungan Masyarakat',
             'jabatan' => 'Anggota',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S22018_2023.png'
+            'picture' => 'img/members/11S22018_2023.png'
         ]);
         
         Member::create([
@@ -268,7 +268,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Hubungan Masyarakat',
             'jabatan' => 'Anggota',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S22046_2023.png'
+            'picture' => 'img/members/11S22046_2023.png'
         ]);
         
 
@@ -279,7 +279,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Komunikasi dan Informasi',
             'jabatan' => 'Ketua',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S21038_2023.png'
+            'picture' => 'img/members/11S21038_2023.png'
         ]);
 
         Member::create([
@@ -288,7 +288,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Komunikasi dan Informasi',
             'jabatan' => 'Wakil Ketua',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S21046_2023.png'
+            'picture' => 'img/members/11S21046_2023.png'
         ]);
 
         Member::create([
@@ -297,7 +297,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Komunikasi dan Informasi',
             'jabatan' => 'Anggota',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S22032_2023.png'
+            'picture' => 'img/members/11S22032_2023.png'
         ]);
 
         Member::create([
@@ -306,7 +306,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Komunikasi dan Informasi',
             'jabatan' => 'Anggota',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S22040_2023.png'
+            'picture' => 'img/members/11S22040_2023.png'
         ]);
 
         //PENDIDIKAN
@@ -316,7 +316,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Pendidikan',
             'jabatan' => 'Ketua',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S21045_2023.png'
+            'picture' => 'img/members/11S21045_2023.png'
         ]);
 
         Member::create([
@@ -325,7 +325,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Pendidikan',
             'jabatan' => 'Wakil Ketua',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S22041_2023.png'
+            'picture' => 'img/members/11S22041_2023.png'
         ]);
 
         Member::create([
@@ -334,7 +334,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Pendidikan',
             'jabatan' => 'Anggota',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S22047_2023.png'
+            'picture' => 'img/members/11S22047_2023.png'
         ]);
 
         Member::create([
@@ -343,7 +343,7 @@ class MembersTableSeeder extends Seeder
             'divisi' => 'Pendidikan',
             'jabatan' => 'Anggota',
             'year' => 2023,
-            'picture' => 'public_html/img/members/11S22007_2023.png'
+            'picture' => 'img/members/11S22007_2023.png'
         ]);
     }
 }
