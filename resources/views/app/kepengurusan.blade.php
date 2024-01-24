@@ -75,7 +75,7 @@
                                             </div>
                                             <div class="unit-9-content">
                                                 <h2>{{ $bph->jabatan }}</h2>
-                                                <span>{{ $bph->nama }}</span>
+                                                <span>{{ $bph->nafma }}</span>
                                             </div>
                                         </a>
                                     </div>

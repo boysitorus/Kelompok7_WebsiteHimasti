@@ -52,6 +52,7 @@
                             <a href="{{ route('detailKegiatan', $program->id) }}"><img
                                     src={{ asset($program->picture) }} alt="Image" class="img-fluid" /></a>
                             <div class="p-4 bg-white">
+                                <span class="d-block text-primary text-uppercase ">{{ $program->divisi }}</span>
                                 <span class="d-block text-secondary small text-uppercase">{{ $program->date }}</span>
                                 <h2 class="h5 text-black mb-3">
                                     <a class="text-blue"
