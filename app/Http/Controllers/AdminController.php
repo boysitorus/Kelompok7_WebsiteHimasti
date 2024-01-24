@@ -193,7 +193,7 @@ class AdminController extends Controller
 
         $filename = $request->nim . "_" . time() . '.' . $picture->getClientOriginalExtension();
 
-        $directory = base_path('public_html/img/members');
+        $directory = ('img/members');
 
         $picture->move($directory, $filename);
 
@@ -203,7 +203,7 @@ class AdminController extends Controller
             'divisi' => $request->divisi,
             'year' => $request->year,
             'jabatan' => $request->get('jabatan'),
-            'picture' => "public_html/img/members/" . $filename
+            'picture' => "img/members/" . $filename
         ]);
 
         return redirect()->back();
@@ -230,7 +230,7 @@ class AdminController extends Controller
 
             $filename = $member->nim . "_" . time() . '.' . $picture->getClientOriginalExtension();
 
-            $directory = base_path('public_html/img/members');
+            $directory = ('img/members');
 
             $picture->move($directory, $filename);
 
@@ -241,7 +241,7 @@ class AdminController extends Controller
             DB::table('members')
                 ->where('nim', $request->nim)
                 ->update([
-                    'picture' => "public_html/img/members/" . $filename
+                    'picture' => "img/members/" . $filename
                 ]);
         }
 
@@ -321,7 +321,7 @@ class AdminController extends Controller
 
             $filename = $program->id . "_" . time() . '.' . $picture->getClientOriginalExtension();
 
-            $directory = base_path('img/programs');
+            $directory = ('img/programs');
 
             $picture->move($directory, $filename);
 
@@ -417,7 +417,7 @@ class AdminController extends Controller
 
         $filename = $news->id . "_" . time() . '.' . $picture->getClientOriginalExtension();
 
-        $directory = base_path('img/news_pictures');
+        $directory = ('img/news_pictures');
 
         $picture->move($directory, $filename);
 
@@ -456,7 +456,7 @@ class AdminController extends Controller
 
             $filename = $berita->id . "_" . time() . '.' . $picture->getClientOriginalExtension();
 
-            $directory = base_path('img/news_pictures');
+            $directory = ('img/news_pictures');
 
             $picture->move($directory, $filename);
 
