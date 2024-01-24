@@ -10,20 +10,23 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\News;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\getClientOriginalExtension;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $auth = Auth::user();
-        
+
         $data = [
             "auth" => $auth
         ];
-        
+
         return view('admin.dashboard', $data);
     }
 
-    public function getKepengurusan(){
+    public function getKepengurusan()
+    {
         $auth = Auth::user();
 
         $managements = Management::select("year")->distinct()->orderBy('year', 'asc')->get();
@@ -36,10 +39,11 @@ class AdminController extends Controller
         return view('admin.kepengurusan', $data);
     }
 
-    public function createKepengurusan(Request $request){
+    public function createKepengurusan(Request $request)
+    {
         $check = Management::where('year', $request->pincode)->first();
 
-        if($check){
+        if ($check) {
             return redirect()->back();
         }
 
@@ -47,19 +51,21 @@ class AdminController extends Controller
             'year' => $request->pincode,
             'divisi' => 'Badan Pengurus Harian'
         ]);
-        
+
         return redirect()->back();
     }
-    public function deleteKepengurusan(Request $request){
+    public function deleteKepengurusan(Request $request)
+    {
         Member::where("year", $request->tahun)->delete();
         Program::where("year", $request->tahun)->delete();
-        
+
         Management::where("year", $request->tahun)->delete();
 
         return redirect()->back();
     }
 
-    public function getDetailKepengurusan($year){
+    public function getDetailKepengurusan($year)
+    {
 
         $auth = Auth::user();
         $managements = Management::where('year', $year)->get();
@@ -72,10 +78,11 @@ class AdminController extends Controller
         return view('admin.kepengurusan.editKepengurusan', $data);
     }
 
-    public function createDivisi(Request $request){
+    public function createDivisi(Request $request)
+    {
         $check = Management::where('year', $request->tahun)->where('divisi', $request->divisi)->first();
 
-        if($check){
+        if ($check) {
             return redirect()->back();
         }
 
@@ -83,17 +90,19 @@ class AdminController extends Controller
             'year' => $request->tahun,
             'divisi' => $request->divisi
         ]);
-        
+
         return redirect()->back();
     }
 
-    public function deleteDivisi(Request $request){
+    public function deleteDivisi(Request $request)
+    {
         Management::where('year', $request->tahun)->where('divisi', $request->divisi)->delete();
 
         return redirect()->back();
     }
 
-    public function getDetailDivisi($tahun, $divisi){
+    public function getDetailDivisi($tahun, $divisi)
+    {
         $auth = Auth::user();
 
         $management = Management::where('divisi', $divisi)->where('year', $tahun)->first();
@@ -107,42 +116,43 @@ class AdminController extends Controller
     }
 
 
-    public function getKeanggotaan($tahun, $divisi){
+    public function getKeanggotaan($tahun, $divisi)
+    {
         $auth = Auth::user();
 
         $management = Management::where('divisi', $divisi)->where('year', $tahun)->first();
         $members = Member::where('divisi', $divisi)->where('year', $tahun)->orderByRaw("CASE WHEN jabatan = 'Ketua' THEN 1 WHEN jabatan = 'Wakil Ketua' THEN 2 ELSE 3 END")->get();
         $checkKetua = false;
         $checkWakilKetua = false;
-        
 
-        if($members->where('jabatan', 'Ketua')->first()){
+
+        if ($members->where('jabatan', 'Ketua')->first()) {
             $checkKetua = true;
         }
 
-        if($members->where('jabatan', 'Wakil Ketua')->first()){
+        if ($members->where('jabatan', 'Wakil Ketua')->first()) {
             $checkWakilKetua = true;
         }
 
-        if($divisi === "Badan Pengurus Harian"){
+        if ($divisi === "Badan Pengurus Harian") {
             $checkSekretaris = false;
             $checkWakilSekretaris = false;
             $checkBendahara = false;
             $checkWakilBendahara = false;
 
-            if($members->where('jabatan', 'Sekretaris')->first()){
+            if ($members->where('jabatan', 'Sekretaris')->first()) {
                 $checkSekretaris = true;
             }
-            if($members->where('jabatan', 'Wakil Sekretaris')->first()){
+            if ($members->where('jabatan', 'Wakil Sekretaris')->first()) {
                 $checkWakilSekretaris = true;
             }
-            if($members->where('jabatan', 'Bendahara')->first()){
+            if ($members->where('jabatan', 'Bendahara')->first()) {
                 $checkBendahara = true;
             }
-            if($members->where('jabatan', 'Wakil Bendahara')->first()){
+            if ($members->where('jabatan', 'Wakil Bendahara')->first()) {
                 $checkWakilBendahara = true;
             }
-            
+
 
             $data = [
                 "auth" => $auth,
@@ -157,7 +167,6 @@ class AdminController extends Controller
             ];
 
             return view('admin.kepengurusan.keanggotaan', $data);
-
         }
 
         $data = [
@@ -171,7 +180,8 @@ class AdminController extends Controller
         return view('admin.kepengurusan.keanggotaan', $data);
     }
 
-    public function createMember(Request $request){
+    public function createMember(Request $request)
+    {
         $request->validate([
             'picture' => 'required|image|mimes:jpeg,png,jpg',
             'nim' => 'required',
@@ -179,73 +189,87 @@ class AdminController extends Controller
             'jabatan' => 'required',
         ]);
 
-        $member = Member::create([
+        $picture = $request->file('picture');
+
+        $filename = $request->nim . "_" . time() . '.' . $picture->getClientOriginalExtension();
+
+        $directory = public_path('public_html/img/members');
+
+        $picture->move($directory, $filename);
+
+        Member::create([
             'nim' => $request->nim,
             'nama' => $request->nama,
             'divisi' => $request->divisi,
             'year' => $request->year,
             'jabatan' => $request->get('jabatan'),
+            'picture' => "public_html/img/members/" . $filename
         ]);
-
-        $picture = $request->file('picture');
-        
-        $filename = $member->nim . "_" . time() . '.' . $picture->getClientOriginalExtension();
-        
-        $directory = public_path('img/members');
-       
-        $picture->move($directory, $filename);
-        
-        $member->update(['picture' => "img/members/" . $filename]);
 
         return redirect()->back();
     }
 
-    public function updateMember(Request $request){
+    public function updateMember(Request $request)
+    {
         $request->validate([
             'picture' => 'image|mimes:jpeg,png,jpg',
         ]);
         $member = Member::where("nim", $request->nim)->first();
-        
-        if(!empty($request->input('nama'))){
-            $member->nama = $request->input('nama');
+
+        if (!empty($request->input('nama'))) {
+            DB::table('members')
+                ->where('nim', $request->nim)
+                ->update([
+                    'nama' => $request->nama,
+                ]);
         }
 
-        if(($request->file('picture')) != null){
-            
+        if (($request->file('picture')) != null) {
+
             $picture = $request->file('picture');
-           
+
             $filename = $member->nim . "_" . time() . '.' . $picture->getClientOriginalExtension();
-            
-            $directory = public_path('img/members');
-            
+
+            $directory = public_path('public_html/img/members');
+
             $picture->move($directory, $filename);
 
             if ($member->picture && file_exists($member->picture)) {
                 unlink($member->picture);
             }
-            
-            $member->picture = "img/members/" . $filename;
+
+            DB::table('members')
+                ->where('nim', $request->nim)
+                ->update([
+                    'picture' => "public_html/img/members/" . $filename
+                ]);
         }
 
-        $member->jabatan = $request->input('jabatan');
-        $member->save();
+        DB::table('members')
+            ->where('nim', $request->nim)
+            ->update([
+                'jabatan' => $request->input('jabatan')
+            ]);
+
         return redirect()->back();
     }
 
-    public function deleteMember(Request $request){
+    public function deleteMember(Request $request)
+    {
         $member = Member::where("nim", $request->nim)->first();
 
-        if($member){
+        if ($member) {
             if ($member->picture && file_exists($member->picture)) {
                 unlink($member->picture);
             }
-            $member->delete();
+            DB::table('members')->where('nim', '=', $request->nim)->delete();
         }
 
         return redirect()->back();
     }
 
-    public function getProker($tahun, $divisi){
+    public function getProker($tahun, $divisi)
+    {
         $auth = Auth::user();
 
         $management = Management::where('divisi', $divisi)->where('year', $tahun)->first();
@@ -255,13 +279,14 @@ class AdminController extends Controller
             "auth" => $auth,
             "management" => $management,
             "programs" => $programs
-            
+
         ];
 
         return view('admin.kepengurusan.proker', $data);
     }
-    
-    public function createProker(Request $request){
+
+    public function createProker(Request $request)
+    {
         $request->validate([
             'title' => 'required',
             'detail' => 'required',
@@ -277,38 +302,39 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
-    public function updateNotDone(Request $request){
+    public function updateNotDone(Request $request)
+    {
         $program = Program::where('id', $request->id)->first();
-        
-        if(!empty($request->input('title'))){
+
+        if (!empty($request->input('title'))) {
             $program->title = $request->input('title');
         }
-        if(!empty($request->input('date'))){
+        if (!empty($request->input('date'))) {
             $program->date = $request->input('date');
         }
-        if(!empty($request->input('updateLaporan'))){
+        if (!empty($request->input('updateLaporan'))) {
             $program->laporan = $request->input('updateLaporan');
         }
-        if(($request->file('picture')) != null){
-            
+        if (($request->file('picture')) != null) {
+
             $picture = $request->file('picture');
-           
+
             $filename = $program->id . "_" . time() . '.' . $picture->getClientOriginalExtension();
-            
+
             $directory = public_path('img/programs');
-            
+
             $picture->move($directory, $filename);
 
             if ($program->picture && file_exists($program->picture)) {
                 unlink($program->picture);
             }
-            
+
             $program->picture = "img/programs/" . $filename;
         }
 
         $program->save();
 
-        if($program->laporan != null && $program->date != null && $program->picture != null){
+        if ($program->laporan != null && $program->date != null && $program->picture != null) {
             $program->status = "Terlaksana";
 
             $program->save();
@@ -316,13 +342,15 @@ class AdminController extends Controller
 
         return redirect()->back();
     }
-    public function deleteProker(Request $request){
+    public function deleteProker(Request $request)
+    {
         Program::where("id", $request->id)->first()->delete();
 
         return redirect()->back();
     }
 
-    public function getNotDone(){
+    public function getNotDone()
+    {
         $auth = Auth::user();
 
         $programs = Program::where("status", "Belum Terlaksana")->orderBy("status", "desc")->get();
@@ -335,7 +363,8 @@ class AdminController extends Controller
         return view('admin.kegiatan.notdone', $data);
     }
 
-    public function getDone(){
+    public function getDone()
+    {
         $auth = Auth::user();
 
         $programs = Program::where("status", "Terlaksana")->orderBy("id", "asc")->get();
@@ -345,10 +374,11 @@ class AdminController extends Controller
             "programs" => $programs
         ];
 
-        return view('admin.kegiatan.done', $data); 
+        return view('admin.kegiatan.done', $data);
     }
 
-    public function getBerita(){
+    public function getBerita()
+    {
         $auth = Auth::user();
 
         $news = News::select("*")->orderBy('id', 'asc')->get();
@@ -361,8 +391,9 @@ class AdminController extends Controller
         return view('admin.berita', $data);
     }
 
-    public function createBerita(Request $request){
-        $validator=Validator::make($request->all(), [
+    public function createBerita(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
             'picture' => 'required|image|mimes:jpeg,png,jpg',
             'title' => 'required',
             'detail' => 'required',
@@ -370,7 +401,7 @@ class AdminController extends Controller
             'type' => 'required',
         ]);
 
-        if($validator->fails()){
+        if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
@@ -379,59 +410,60 @@ class AdminController extends Controller
             'date' => $request->date,
             'detail' => $request->detail,
             'type' => $request->get('type'),
-            
+
         ]);
 
         $picture = $request->file('picture');
-        
+
         $filename = $news->id . "_" . time() . '.' . $picture->getClientOriginalExtension();
-        
+
         $directory = public_path('img/news_pictures');
-       
+
         $picture->move($directory, $filename);
-        
+
         $news->picture = "img/news_pictures/" . $filename;
 
         $news->save();
         return redirect()->back()->with('success', 'News added successfully');
     }
 
-    public function updateBerita(Request $request){
+    public function updateBerita(Request $request)
+    {
         $request->validate([
             'picture' => 'image|mimes:jpeg,png,jpg',
         ]);
         $berita = News::where("id", $request->id)->first();
-        
-        if(!empty($request->input('title'))){
+
+        if (!empty($request->input('title'))) {
             $berita->title = $request->input('title');
         }
 
-        if(!empty($request->input('date'))){
+        if (!empty($request->input('date'))) {
             $berita->date = $request->input('date');
         }
 
-        if(!empty($request->input('updateDetail'))){
+        if (!empty($request->input('updateDetail'))) {
             $berita->detail = $request->input('updateDetail');
         }
 
-        if(!empty($request->input('details'))){
+        if (!empty($request->input('details'))) {
             $berita->detail = $request->input('details');
         }
 
-        if(($request->file('picture')) != null){
-            
+        if (($request->file('picture')) != null) {
+
             $picture = $request->file('picture');
-           
+
             $filename = $berita->id . "_" . time() . '.' . $picture->getClientOriginalExtension();
-            
+
             $directory = public_path('img/news_pictures');
-            
+
             $picture->move($directory, $filename);
 
             if ($berita->picture && file_exists($berita->picture)) {
                 unlink($berita->picture);
             }
-            
+
             $berita->picture = "img/news_pictures/" . $filename;
         }
 
@@ -440,10 +472,11 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
-    public function deleteBerita(Request $request){
+    public function deleteBerita(Request $request)
+    {
         $berita = News::where("id", $request->id)->first();
 
-        if($berita){
+        if ($berita) {
             if ($berita->picture && file_exists($berita->picture)) {
                 unlink($berita->picture);
             }

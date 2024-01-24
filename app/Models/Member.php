@@ -11,7 +11,7 @@ class Member extends Model
 
     protected $table = 'members';
 
-    protected $fillable = ['nim', 'nama', 'jabatan', 'divisi', 'year', 'picture'];
+    protected $fillable = ['nim', 'nama', 'jabatan', 'divisi', 'picture', 'year'];
 
     protected $primaryKey = ['nim', 'year'];
 

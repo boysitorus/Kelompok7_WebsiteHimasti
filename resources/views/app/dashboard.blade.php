@@ -1,7 +1,7 @@
 @extends('template.app')
 
 @section('content')
-    <div class="site-blocks-cover overlay" style="background-image: url({{ asset('assets/images/himasti.jpg') }});"
+    <div class="site-blocks-cover overlay" style="background-image: url({{ asset('assets/images/himasti.JPG') }});"
         data-aos="fade" data-stellar-background-ratio="0.5" data-aos="fade">
         <div class="container">
             <div class="row align-items-center justify-content-center">
