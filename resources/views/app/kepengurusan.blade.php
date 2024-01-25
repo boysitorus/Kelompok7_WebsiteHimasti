@@ -23,8 +23,9 @@
             <label for="tahun-select">Pilih Tahun Kepengurusan :</label>
             <select class="form-control" id="tahun-select" name="tahun-select">
                 @foreach ($yearsOptions as $year)
-                    <option value="{{ $year->year }}" {{ $year->year == $yearSelected ? 'selected' : '' }}>Kepengurusan
-                        Tahun {{ $year->year }}/{{ $year->year + 1 }}</option>
+                    <option value="{{ $year->year }}" {{ $year->year == $yearSelected ? 'selected' : '' }}>
+                        Kepengurusan Tahun {{ $year->year }}/{{ $year->year + 1 }}
+                    </option>
                 @endforeach
                 <!-- Tambahkan tahun-tahun berikutnya sesuai kebutuhan -->
             </select>
